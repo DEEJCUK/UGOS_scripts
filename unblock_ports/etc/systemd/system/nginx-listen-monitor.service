@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor /etc/nginx/ugreen_redirect.conf and update listen directives
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/update_nginx_listen.sh
+Restart=always
+User=root
+ExecStartPre=/bin/bash -c 'while ! systemctl is-active docker; do echo "Waiting for docker..."; sleep 5; done'
+
+[Install]
+WantedBy=multi-user.target

@@ -34,7 +34,7 @@ To change that, we need to modify the nginx config inside `/etc/nginx/ugreen_red
 Create the file /usr/local/bin/update_nginx_listen.sh
 
 ```sh
-$ sudo nano /usr/local/bin/update_nginx_listen.sh
+User@DXP4800PLUS:~$ sudo nano /usr/local/bin/update_nginx_listen.sh
 ```
 
 and paste the content of [usr/local/bin/update_nginx_listen.sh](usr/local/bin/update_nginx_listen.sh) inside.
@@ -42,7 +42,7 @@ and paste the content of [usr/local/bin/update_nginx_listen.sh](usr/local/bin/up
 Next, create a file for the service definition like `/etc/systemd/system/nginx-listen-monitor.service`
 
 ```sh
-$ sudo nano /etc/systemd/system/nginx-listen-monitor.service
+User@DXP4800PLUS:~$ sudo nano /etc/systemd/system/nginx-listen-monitor.service
 ```
 
 and paste the content of [etc/systemd/system/nginx-listen-monitor.service](etc/systemd/system/nginx-listen-monitor.service) inside.
@@ -52,7 +52,7 @@ Repeat these steps for the ssl config files.
 Create the file `/usr/local/bin/update_nginx_listen_secure.sh`
 
 ```sh
-$ sudo nano /usr/local/bin/update_nginx_listen_secure.sh
+User@DXP4800PLUS:~$ sudo nano /usr/local/bin/update_nginx_listen_secure.sh
 ```
 
 and paste the content of [usr/local/bin/update_nginx_listen_secure.sh](usr/local/bin/update_nginx_listen_secure.sh) inside.
@@ -60,7 +60,7 @@ and paste the content of [usr/local/bin/update_nginx_listen_secure.sh](usr/local
 Next, create a file for the service definition like `/etc/systemd/system/nginx-listen-monitor.service`
 
 ```sh
-$ sudo nano /etc/systemd/system/nginx-listen-secure-monitor.service
+User@DXP4800PLUS:~$ sudo nano /etc/systemd/system/nginx-listen-secure-monitor.service
 ```
 
 and paste the content of [etc/systemd/system/nginx-listen-secure-monitor.service](etc/systemd/system/nginx-listen-secure-monitor.service) inside.
@@ -68,30 +68,30 @@ and paste the content of [etc/systemd/system/nginx-listen-secure-monitor.service
 Next, you need to make the scripts executable:
 
 ```sh
-$ sudo chmod +x /usr/local/bin/update_nginx_listen.sh
-$ sudo chmod +x /usr/local/bin/update_nginx_listen_secure.sh
+User@DXP4800PLUS:~$ sudo chmod +x /usr/local/bin/update_nginx_listen.sh
+User@DXP4800PLUS:~$ sudo chmod +x /usr/local/bin/update_nginx_listen_secure.sh
 ```
 
 Reload the systemctl deamon:
 
 ```sh
-$ sudo systemctl daemon-reload
+User@DXP4800PLUS:~$ sudo systemctl daemon-reload
 ```
 
 Enable and start the services:
 
 ```sh
-$ sudo systemctl enable nginx-listen-monitor.service
-$ sudo systemctl start nginx-listen-monitor.service
-$ sudo systemctl enable nginx-listen-secure-monitor.service
-$ sudo systemctl start nginx-listen-secure-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl enable nginx-listen-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl start nginx-listen-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl enable nginx-listen-secure-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl start nginx-listen-secure-monitor.service
 ```
 
 You can always get the current status (or find information to debug errors) with:
 
 ```sh
-$ sudo systemctl status nginx-listen-monitor.service
-$ sudo systemctl status nginx-listen-secure-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl status nginx-listen-monitor.service
+User@DXP4800PLUS:~$ sudo systemctl status nginx-listen-secure-monitor.service
 ```
 
 A quick check shows that the ports 80 and 443 are no longer used by nginx.
@@ -106,17 +106,17 @@ User@DXP4800PLUS:~$ sudo netstat -ltnp | grep -w ':443'
 Create and navigate to the directory `/volume1/docker_compose/` and create a directory for your service (I would not recommend to use the already created docker directory as the permissions inside that are overwritten by the system). Place your `docker-compose.yml` file inside that directory. You can also use VS Code for example to start a [remote SSH session](https://code.visualstudio.com/docs/remote/ssh) which makes file handling a lot easier.
 
 ```sh
-$ mkdir /volume1/docker_compose/
-$ cd /volume1/docker_compose/
-$ mkdir your_service
-$ cd your_service
-$ nano docker-compose.yml
+User@DXP4800PLUS:~$ mkdir /volume1/docker_compose/
+User@DXP4800PLUS:~$ cd /volume1/docker_compose/
+User@DXP4800PLUS:~$ mkdir your_service
+User@DXP4800PLUS:~$ cd your_service
+User@DXP4800PLUS:~$ nano docker-compose.yml
 ```
 
 And after you put in your config, start the service.
 
 ```sh
-$ sudo docker compose up
+User@DXP4800PLUS:~$ sudo docker compose up
 ```
 
 ### 6. Profit.

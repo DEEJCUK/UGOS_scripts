@@ -11,3 +11,4 @@ Before using these scripts, you should have a basic understanding of Linux and t
 ## Content 
 
 * [Unblock ports 80 and 443 to run any (docker) service you want](unblock_ports)
+* [Use public key authentication for ssh instead of password](ssh_public_key)

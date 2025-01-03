@@ -1,6 +1,6 @@
 # Use public key authentication for ssh instead of password
 
-**TL;DR**: Usually, setting up key based authentication for a SSH server is as simple as a single call to [ssh-copy-id](https://manpages.debian.org/bookworm/openssh-client/ssh-copy-id.1.en.html). However, on UGOS, there are some extra steps required to fix the permission issues.
+Usually, setting up key based authentication for a SSH server is as simple as a single call to [ssh-copy-id](https://manpages.debian.org/bookworm/openssh-client/ssh-copy-id.1.en.html). However, on UGOS, there are some extra steps required to fix the permission issues.
 
 ## Instructions
 

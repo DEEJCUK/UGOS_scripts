@@ -1,4 +1,4 @@
-# Setting up tailscale
+# Setting up tailscale for external access
 
 ## Instructions
 

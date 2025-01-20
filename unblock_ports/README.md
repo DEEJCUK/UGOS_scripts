@@ -1,3 +1,9 @@
+# Deprecated
+
+This guide is no longer needed. Instead, you can configure these settings in the web ui:
+
+![UGOS Web UI](images/ugos_web_ui.png)
+
 # Unblock ports 80 and 443 to run any (docker) service you want
 
 To use port 80/443, you need to change the default configs in `/etc/nginx/ugreen_redirect.conf` and `/etc/nginx/ugreen_ssl_redirect.conf`. As it is overwritten by the UGOS software, you need to setup a service that constantly watches for changes. Additionaly, [traefik](https://doc.traefik.io/traefik/) is used as reverse proxy and reloaded automatically. 

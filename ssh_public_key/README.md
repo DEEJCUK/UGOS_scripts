@@ -19,6 +19,11 @@ User@DXP4800PLUS:~$ sudo nano /usr/local/bin/check_and_fix_ssh_permissions.sh
 ```
 
 and paste the content of [usr/local/bin/check_and_fix_ssh_permissions.sh](usr/local/bin/check_and_fix_ssh_permissions.sh) inside. Make sure to replace <USER NAME> with you actual user name.
+To make sure that the script can be executed, let's add execution permissions.
+
+```sh
+User@DXP4800PLUS:~$ chmod +x /usr/local/bin/check_and_fix_ssh_permissions.sh
+```
 
 Next, create the service file
 

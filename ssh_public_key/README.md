@@ -22,7 +22,7 @@ and paste the content of [usr/local/bin/check_and_fix_ssh_permissions.sh](usr/lo
 To make sure that the script can be executed, let's add execution permissions.
 
 ```sh
-User@DXP4800PLUS:~$ chmod +x /usr/local/bin/check_and_fix_ssh_permissions.sh
+User@DXP4800PLUS:~$ sudo chmod +x /usr/local/bin/check_and_fix_ssh_permissions.sh
 ```
 
 Next, create the service file
